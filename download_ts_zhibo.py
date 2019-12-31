@@ -17,16 +17,29 @@ ssl._create_default_https_context = ssl._create_unverified_context
 def writefile(path, filename, data, type):
     with open(path + filename, type)as f:
         f.write(data)
+
+# 'A/video/success.log'
+def hasfile(filepath,filename):
+    res = 0
+    with open(filepath, 'r') as foo:
+        for line in foo.readlines():
+            if file_name in line:
+                print(file_name + '-已下载过，跳过-')
+                res = 1
+            break
+    return res
+path = "A/video/"
+open(path + 'success.log', "wb")
+open(path + 'new_video_zb.m3u8', "wb")
 var = 1
 count = 0
-path = "A/video/"
-begin_url = "http://cyberplayerplay.kaywang.cn/cyberplayer/"
-url = "http://cyberplayerplay.kaywang.cn/cyberplayer/demo201711-L1.m3u8"
 while var == 1:
+    begin_url = "http://ivi.bupt.edu.cn/hls/"
+    url = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
     os.system('./delsomefiles.sh')
     print("while starting")
-    # print ("The count is:")
-    # print (count)
+    # print("The count is:")
+    # print(count)
     count = count + 1
     print("--count--")
     print(count)
@@ -44,9 +57,6 @@ while var == 1:
     header = {
         'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0);'
     }
-    open(path + 'success.log', "wb")
-    open(path + 'new_video_zb.m3u8', "wb")
-
     print(file_line)
     for index, line in enumerate(file_line):
         if "EXTINF" in line:
@@ -57,8 +67,17 @@ while var == 1:
         else:
             writefile(path, 'new_video_zb.m3u8', file_line[index] + '\n', 'a+')
     url_length = len(url_list)
+    print(url_list)
     for i in range(len(url_list)):
         add_url = url_list[i]
+        file_name = url_list[i][length:]
+        print('-file_name-')
+        print(file_name)
+
+        if(hasfile(path + 'success.log',file_name)):
+            print(file_name+'已下载过了')
+            continue
+
         request = urllib.request.Request(add_url, headers=header)
         print(request)
         # 重试30次
@@ -79,18 +98,16 @@ while var == 1:
 
         html = response.read()
         file_name = url_list[i][length:]
-        print(url_list)
-
-        time.sleep(3)
+        #time.sleep(1)
         print(path + file_name)
         if (not os.path.exists(path)):
             os.makedirs(path)
         with open(path + file_name, "wb")as f:
             f.write(html)
 
-    time.sleep(1)
+    #time.sleep(1)
     print('download end')
     os.system('cp -f A/video/new_video_zb.m3u8 A/video/video_zb.m3u8')
     print('A/video/video_zb.m3u8 is update!')
     writefile(path, 'error.log', '.' + '\n', 'a+')
-    writefile(path, 'update.log', 'time' + '\n', 'wb')
+   # writefile(path, 'update.log', 'time' + '\n', 'wb')
