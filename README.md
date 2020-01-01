@@ -41,7 +41,7 @@
 # 思路
 # 同步直播流的m3u8文件
 # 循环读取最新m3u8文件，寻找未下载的ts文件,下载下来
-# 只保留最新的40个ts文件
+# 只保留最新的20个ts文件
 
 # 关于直播的参考文章
 
@@ -49,3 +49,5 @@
 # https://www.cnblogs.com/jys509/p/5653720.html
 # Mac上搭建直播服务器Nginx+rtmp
 # https://www.cnblogs.com/jys509/p/5649066.html
+
+

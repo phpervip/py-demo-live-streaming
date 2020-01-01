@@ -121,4 +121,4 @@ while var == 1:
     t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     writefile(path, 'update.log', t + '\n', 'w')
 
-    # 用VCL打开 localhost/py-demo/A/video/video_zb.m3u8
+# 用VLC播放器，可打开 localhost/py-demo/A/video/video_zb.m3u8
