@@ -54,4 +54,22 @@ https://www.cnblogs.com/jys509/p/5649066.html
 [FFmpeg] ffmpeg 常用命令
 https://www.cnblogs.com/frost-yen/p/5848781.html
 
+# 直播平台流媒体服务器搭建（Linux+Nginx+RTMP）
+https://blog.csdn.net/EricZwz/article/details/84581409
+
+# ffmpeg+nginx+rtmp+web实现视频直播网站
+https://blog.csdn.net/fu_shuwu/article/details/89598311
+
+# 怎样在vmix中进行直播推流？
+https://www.gxqwkj.com/vmixkc/1695.html
+windows中下载vmix20，使用基础版，先免费注册。
+获得key，即可以使用
+在mac中也可以下载OBS软件。
+
+# 快速搭建自己的直播服务器，完成属于你直播服务
+https://www.jianshu.com/p/f304b3d18713
+
+# mac上虚拟机win10与主机网络互ping
+https://www.jianshu.com/p/755bee85b2ff
+这个关系到mac中的windows虚拟机中的vMix访问mac中的nginx的直播服务器。
 
