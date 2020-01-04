@@ -36,12 +36,20 @@ var = 1
 count = 0
 while var == 1:
     # 中央电视台的直播流
-    # begin_url = "http://ivi.bupt.edu.cn/hls/"
-    # url = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
+    begin_url = "http://ivi.bupt.edu.cn/hls/"
+    url = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
 
-    # 本地搭建的直播流
-    begin_url = "http://localhost/hls/"
-    url = "http://localhost/hls/movie.m3u8"
+    # mac本机搭建的直播流
+    # begin_url = "http://localhost/hls/"
+    # url = "http://localhost/hls/movie.m3u8"
+
+    # mac的windows虚拟机搭建的直播流，这样写不行。看
+    # begin_url = "http://windows-10.shared/tmp/hls/"
+    # url = "http://windows-10.shared/tmp/hls/movie.m3u8"
+
+    # 注意，begin_url后面必须有/
+    # begin_url = "http://10.211.55.3/tmp/hls/"
+    # url = "http://10.211.55.3/tmp/hls/movie.m3u8"
 
     os.system('./delsomefiles.sh')
     #print("while starting")
@@ -116,7 +124,7 @@ while var == 1:
     # print('download end')
     os.system('cp -f A/video/new_video_zb.m3u8 A/video/video_zb.m3u8')
     print('A/video/video_zb.m3u8 is update!')
-    time.sleep(3)
+    time.sleep(1)
     # writefile(path, 'error.log', '.' + '\n', 'a+')
     t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     writefile(path, 'update.log', t + '\n', 'w')
