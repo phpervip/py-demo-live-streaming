@@ -5,7 +5,7 @@
 ReservedNum=20
 
 #当前脚本所在目录
-cd A/video
+cd a/video
 RootDir=$(cd `dirname $0`; pwd)
 
 #显示文件数， *.*可以改为指定文件类型
