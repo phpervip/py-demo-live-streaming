@@ -17,7 +17,7 @@ def writefile(path, filename, data, type):
     with open(path + filename, type)as f:
         f.write(data)
 
-# 'A/video/success.log'
+# 'a/video/success.log'
 def hasfile(filepath,filename):
     res = 0
     with open(filepath, 'r') as foo:
@@ -27,7 +27,7 @@ def hasfile(filepath,filename):
                 res = 1
             break
     return res
-path = "A/video/"
+path = "a/video/"
 open(path + 'success.log', "wb")
 open(path + 'update.log', "wb")
 open(path + 'error.log', "wb")
@@ -35,9 +35,14 @@ open(path + 'error.log', "wb")
 var = 1
 count = 0
 while var == 1:
+    # cyberplayer的直播流
+    begin_url = "http://cyberplayerplay.kaywang.cn/cyberplayer/"
+    url = "http://cyberplayerplay.kaywang.cn/cyberplayer/demo201711-L1.m3u8"
+
+    
     # 中央电视台的直播流
-    begin_url = "http://ivi.bupt.edu.cn/hls/"
-    url = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
+    # begin_url = "http://ivi.bupt.edu.cn/hls/"
+    # url = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
 
     # mac本机搭建的直播流
     # begin_url = "http://localhost/hls/"
@@ -122,11 +127,12 @@ while var == 1:
             with open(path + file_name, "wb")as f:
                 f.write(html)
     # print('download end')
-    os.system('cp -f A/video/new_video_zb.m3u8 A/video/video_zb.m3u8')
-    print('A/video/video_zb.m3u8 is update!')
+    os.system('cp -f a/video/new_video_zb.m3u8 a/video/video_zb.m3u8')
+    print('a/video/video_zb.m3u8 is update!')
     time.sleep(1)
     # writefile(path, 'error.log', '.' + '\n', 'a+')
     t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     writefile(path, 'update.log', t + '\n', 'w')
 
-# 用VLC播放器，可打开 localhost/py-demo/A/video/video_zb.m3u8
+# 用VLC播放器，可打开 localhost/py-demo/a/video/video_zb.m3u8
+

@@ -1,11 +1,7 @@
 # py-demo-live-streaming
 
-# download_ts_dianbo.py 爬取网上的点播流
-# download_ts_zhibo.py 爬取网上的直播流，生成新的直播流
-
-# 命令
-python download_ts_dianbo.py
-python download_ts_zhibo.py
+# dlts_dianbo.py 爬取网上的点播流
+# dlts_zhibo.py 爬取网上的直播流，生成新的直播流
 
 # 百度云播放器
 http://cyberplayer.bcelive.com/demo/new/index.html
@@ -46,15 +42,16 @@ https://blog.csdn.net/csdndouniwan/article/details/89680407
 循环读取最新m3u8文件，寻找未下载的ts文件,下载下来
 只保留最新的20个ts文件
 
-# 参考文章-直播
+# 关于直播的参考文章
 
-# Mac直播服务器Nginx配置对HLS的支持
+Mac直播服务器Nginx配置对HLS的支持
 https://www.cnblogs.com/jys509/p/5653720.html
-
-# Mac上搭建直播服务器Nginx+rtmp
+Mac上搭建直播服务器Nginx+rtmp
 https://www.cnblogs.com/jys509/p/5649066.html
 
-# [FFmpeg] ffmpeg 常用命令
+
+# 扩展
+[FFmpeg] ffmpeg 常用命令
 https://www.cnblogs.com/frost-yen/p/5848781.html
 
 # 直播平台流媒体服务器搭建（Linux+Nginx+RTMP）
@@ -69,6 +66,9 @@ windows中下载vmix20，使用基础版，先免费注册。
 获得key，即可以使用
 在mac中也可以下载OBS软件。
 
+# [vmIx教程]vmix使用NDI功能输出操作说明  (旁边有相关推荐)
+https://www.bilibili.com/video/av74051561
+
 # 快速搭建自己的直播服务器，完成属于你直播服务
 https://www.jianshu.com/p/f304b3d18713
 
@@ -79,8 +79,8 @@ https://www.jianshu.com/p/755bee85b2ff
 # Windows系统下ffmpeg+nginx搭建HLS服务器
 https://www.jianshu.com/p/0c1f96a2cf49。
 
-# Windows下用FFmpeg+nginx+rtmp搭建直播环境_实现推流、拉流（超简单教程)
-https://www.jianshu.com/p/eacfc0a9f2fd
+# Video.js使用教程
+http://www.pianshen.com/article/6489340119/;jsessionid=E613F9DAE38668D1F4EB242A74A5A513
 
 # Windows下实现ffmpeg+nginx+rtmp+hls实现直播推流拉流（低延时）
 https://blog.csdn.net/u011925282/article/details/102580420
@@ -88,4 +88,5 @@ https://blog.csdn.net/u011925282/article/details/102580420
 # rsync同步服务的总结(Linux与windows双向)
 https://www.jianshu.com/p/bb9f53750b3e
 
-
+# Windows下用FFmpeg+nginx+rtmp搭建直播环境_实现推流、拉流（超简单教程)
+https://www.jianshu.com/p/eacfc0a9f2fd

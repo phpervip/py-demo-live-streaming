@@ -19,7 +19,7 @@ def writefile(path, filename, data, type):
         f.write(data)
 var = 1
 count = 0
-path = "A/video/"
+path = "a/video/"
 begin_url = "http://gcqq450f71eywn6bv7u.exp.bcevod.com/mda-hiup6h1qdymgf3fe/"
 url = "http://gcqq450f71eywn6bv7u.exp.bcevod.com/mda-hiup6h1qdymgf3fe/mda-hiup6h1qdymgf3fe.m3u8"
 while var == 1:
@@ -68,7 +68,7 @@ while var == 1:
         result_file_name=url_list[i][length:]
         print("正在处理%s" % result_file_name, "共%s/%s项" % (i + 1, url_length))
         time.sleep(1)
-        path = "A/video/"
+        path = "a/video/"
         if (not os.path.exists(path)):
             os.makedirs(path)
         with open(path + result_file_name, "wb")as f:
